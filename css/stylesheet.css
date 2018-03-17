@@ -10,14 +10,16 @@ html {
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh !important;
+  overflow: scroll;
   font-family: 'Lato', sans-serif;
   text-align: center;
-  color: white
+  color: white;
 }
 
 .homepage-panel {
-  margin: 30px auto 30px auto;
+  overflow-x: hidden;
+  margin: 20px auto;
   position: absolute;
   width: 55%;
   top: 50%;
@@ -26,58 +28,89 @@ body {
 }
 
 .homepage-panel #homepage-propic {
-  width: 200px;
-  margin: 0 auto 1em auto;
+  position: relative;
+  margin: 0.5em auto;
   background: url(../assets/profile.jpg) no-repeat;
-  background-size: 200px 200px;
-  width: 200px;
-  height: 200px;
-  border-radius: 100px;
-  -webkit-border-radius: 100px;
-  -moz-border-radius: 100px;
+  background-size: 20vmin 20vmin;
+  width: 20vmin;
+  height: 20vmin;
+  border-radius: 10vmin;
+  -webkit-border-radius: 10vmin;
+  -moz-border-radius: 10vmin;
 }
 
 .homepage-panel h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
+.homepage-panel hr {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
 .homepage-panel h1 {
-  font-size: 2.5em;
+  font-size: 2.5vw;
   font-weight: 700;
-  padding: 0 0 0.4em 0;
-  letter-spacing: 0.23em;
+  padding: 0.4em 0;
+  letter-spacing: 0.2em;
+  -webkit-transition: all 0.7s ease;
+  -moz-transition: all 0.7s ease;
+  -o-transition: all 0.7s ease;
+  -ms-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+}
+
+.homepage-panel h1:hover {
+  color: #feedff;
 }
 
 .homepage-panel h4 {
   color: #feedff;
-  font-size: 1.25em;
+  font-size: 1.25vw;
   font-weight: 300;
   padding: 0.8em 0;
 }
 
 .homepage-panel .homepage-contact {
-  padding-top: 1em;
   width: 100%;
+  /* margin: 0.5em 0;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  overflow: auto; */
+  width: calc(2 * (50% - 2em));
+  margin: 0.5em auto;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  overflow: auto;
 }
 
 .homepage-panel .homepage-contact a {
+  overflow-wrap: break-word;
   color: white;
-  font-size: 65%;
-  font-weight: 100;
+  font-weight: 300;
   letter-spacing: 0.4em;
   text-decoration: none;
   vertical-align: middle;
   border: white;
-  border-radius: 8px;
+  border-radius: 0.5em;
   border-style: solid;
   border-width: thin;
   padding: 0.5em;
-  width: 80%;
-  margin: 0.5em 10%;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  /* font-size: 65%;
   display: inline-block;
-  -webkit-transition-duration: 0.4s;
-  /* Safari */
-  transition-duration: 0.4s;
+  width: 80%;
+  margin: 0.5em 0;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-right: 0; */
+  font-size: 0.6vw;
+  width: calc(50% - 2em - 2px);
+  float: left;
+  margin: 0.5em;
 }
 
 .homepage-panel .homepage-contact a:hover {
@@ -87,26 +120,77 @@ body {
 }
 
 .homepage-panel .homepage-contact a span {
-  font-size: 150%;
+  font-size: calc(1.2vw - 0.24px);
   letter-spacing: 0.25em;
   vertical-align: bottom;
 }
 
-@media screen and (max-width: 1000px) {
-  html {
-    background-image: url(../assets/cover-medium.jpg);
-  }
+.homepage-panel .homepage-contact::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+@media screen and (max-width: 1024px) {
   .homepage-panel {
-    width: 80%;
+    width: 90%;
   }
-  .homepage-panel .homepage-contact a {
-    width: 100%;
-    margin: 0.5em 0;
+}
+
+@media screen and (max-width: 979px) {
+  .homepage-panel h1 {
+    font-size: 2em;
   }
   .homepage-panel h4 {
     font-size: 1em;
   }
-  /* .homepage-panel .homepage-contact a span {
-    font-weight: 300;
-  } */
+  .homepage-panel .homepage-contact a {
+    font-size: 65%;
+    display: inline-block;
+    width: calc(100% - 2em);
+  }
+  .homepage-panel .homepage-contact a span {
+    font-size: 150%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    background-image: url(../assets/cover-medium.jpg);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .homepage-panel #homepage-propic {
+    background-size: 15vmax 15vmax;
+    width: 15vmax;
+    height: 15vmax;
+    border-radius: 75vmax;
+    -webkit-border-radius: 75vmax;
+    -moz-border-radius: 75vmax;
+  }
+  .homepage-panel .homepage-contact a {
+    font-size: calc(2.2vw - 0.1px);
+  }
+}
+
+@media screen and (max-width: 320px) {
+  html {
+    background-image: url(../assets/cover-small.jpg);
+  }
+  .homepage-panel h1 {
+    font-size: 1.6em;
+  }
+  .homepage-panel .homepage-contact a {
+    font-size: 4vw;
+  }
+  .homepage-panel .homepage-contact a span {
+    display: none;
+  }
+}
+
+@media screen and (max-height: 480px) {
+  .homepage-panel #homepage-propic {
+    display: none;
+  }
 }
