@@ -10,6 +10,7 @@ html {
 }
 
 body {
+  height: 100vh;
   font-family: 'Lato', sans-serif;
   text-align: center;
   color: white
@@ -105,10 +106,7 @@ body {
   .homepage-panel h4 {
     font-size: 1em;
   }
-}
-
-@media screen and (max-width: 600px) {
-  html {
-    background-image: url(../assets/cover-small.jpg);
-  }
+  /* .homepage-panel .homepage-contact a span {
+    font-weight: 300;
+  } */
 }
