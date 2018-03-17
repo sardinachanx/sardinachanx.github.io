@@ -8,7 +8,7 @@
   <meta name="author" content="Serena Chan">
   <meta name="description" content="Serena Chan">
   <meta name="keywords" content="cs,math">
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=lato" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
   <link rel="stylesheet" href="css/stylesheet.css" type="text/css">
   <!-- Google Analytics -->
   <script type="text/javascript">
@@ -28,13 +28,55 @@
 
 <body>
   <div class="homepage-panel">
+    <div id="homepage-propic"></div>
     <h1>SERENA CHAN</h1>
-    <hr>
-    <h4>I'm currently double majoring in Computer Science and Pure Math at University of Massachusetts Amherst. Besides coding
-      and solving problems, I also like headphones, classical music, and hosting hackathons.</h4>
+    <hr style="width: 80%; color: rgba(255, 255, 255, 0.4)">
+    <h4>I'm a freshman double majoring in Computer Science and Pure Math at the University of Massachusetts Amherst. I'm also
+      an audiophile, classical musician, and hackathon organizer. From door security systems to a brain-computer interface
+      research project, my intellectual curiosity has led me to explore many aspects of computer science and coding.</h4>
+    <div class="homepage-contact">
+      <a href="ma&#105;l&#116;o&#58;serena&#64;%7&#51;er&#101;n%6&#49;chan&#46;me">
+        <i class="fas fa-at fa-2x"></i>
+        <span id="mail"></span>
+      </a>
+      <a href="https://github.com/sardinachanx">
+        <i class="fab fa-github fa-2x"></i>
+        <span>SARDINACHANX</span>
+      </a>
+      <a href="https://linkedin.com/in/serena-chan-tk/">
+        <i class="fab fa-linkedin fa-2x"></i>
+        <span>IN/SERENA-CHAN-TK</span>
+      </a>
+      <a href="assets/serena_chan_resume.pdf">
+        <i class="far fa-file-alt fa-2x"></i>
+        <span>RESUME</span>
+      </a>
+    </div>
   </div>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script>
+  <!-- Background movement -->
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $(window).mousemove(function (e) {
+        var amountMovedX = (e.pageX * -1 / 6);
+        var amountMovedY = (e.pageY * -1 / 6);
+        $(this).css('background-position', amountMovedX + 'px ' + amountMovedY + 'px');
+      });
+    });
+
+  </script>
+  <!-- Email obfuscation -->
+  <script>
+    function generate() {
+      var first = "serena"
+      var second = "chan"
+      var ext = "me"
+      return (first + "@" + first + second + "." + ext).toUpperCase()
+    }
+    const mail = document.getElementById('mail')
+    mail.innerHTML = generate()
+  </script>
 </body>
 
 </html>

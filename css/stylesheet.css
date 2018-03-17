@@ -1,49 +1,114 @@
 html {
   background: no-repeat center center fixed;
-  background-color: rgba(0, 0, 0, 0.6);
-  background-image: url(../cover.jpg);
+  background-color: rgba(0, 0, 0, 0.7);
+  background-image: url(../assets/cover-large.jpg);
   background-blend-mode: overlay;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
+
 body {
   font-family: 'Lato', sans-serif;
+  text-align: center;
+  color: white
 }
+
 .homepage-panel {
-  margin: auto;
+  margin: 30px auto 30px auto;
   position: absolute;
   width: 55%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-@media screen and (max-width: 768px) {
-  .homepage-panel{
-    width: 80%;
-  }
+
+.homepage-panel #homepage-propic {
+  width: 200px;
+  margin: 0 auto 1em auto;
+  background: url(../assets/profile.jpg) no-repeat;
+  background-size: 200px 200px;
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
 }
-.homepage-panel h1, h2, h3, h4, h5, h6{
+
+.homepage-panel h1, h2, h3, h4, h5, h6 {
   margin: 0;
-  text-align: center;
 }
+
 .homepage-panel h1 {
-  color: white;
   font-size: 2.5em;
-  padding: 0 0 0.5em 0;
+  font-weight: 700;
+  padding: 0 0 0.4em 0;
+  letter-spacing: 0.23em;
 }
+
 .homepage-panel h4 {
   color: #feedff;
-  font-size: 1em;
-  font-weight: normal;
-  padding: 1em 0;
+  font-size: 1.25em;
+  font-weight: 300;
+  padding: 0.8em 0;
 }
-a::before{
+
+.homepage-panel .homepage-contact {
+  padding-top: 1em;
+  width: 100%;
+}
+
+.homepage-panel .homepage-contact a {
   color: white;
-  font-size: 1em;
+  font-size: 65%;
+  font-weight: 100;
+  letter-spacing: 0.4em;
+  text-decoration: none;
+  vertical-align: middle;
+  border: white;
+  border-radius: 8px;
+  border-style: solid;
+  border-width: thin;
+  padding: 0.5em;
+  width: 80%;
+  margin: 0.5em 10%;
+  display: inline-block;
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s;
 }
-.homepage-contact span {
-  font-size: 0.7em;
-  font-weight: lighter;
+
+.homepage-panel .homepage-contact a:hover {
+  color: black;
+  background-color: white;
+  font-weight: 300;
+}
+
+.homepage-panel .homepage-contact a span {
+  font-size: 150%;
+  letter-spacing: 0.25em;
+  vertical-align: bottom;
+}
+
+@media screen and (max-width: 1000px) {
+  html {
+    background-image: url(../assets/cover-medium.jpg);
+  }
+  .homepage-panel {
+    width: 80%;
+  }
+  .homepage-panel .homepage-contact a {
+    width: 100%;
+    margin: 0.5em 0;
+  }
+  .homepage-panel h4 {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  html {
+    background-image: url(../assets/cover-small.jpg);
+  }
 }
