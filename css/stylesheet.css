@@ -1,6 +1,6 @@
 html {
-  height:auto!important;
-  width:100%!important;
+  height: auto!important;
+  width: 100%!important;
   background: no-repeat center center fixed;
   background-color: rgba(0, 0, 0, 0.75);
   background-image: url(../assets/cover-large.jpg);
@@ -41,7 +41,12 @@ body {
   -moz-border-radius: 10vmin;
 }
 
-.homepage-panel h1, h2, h3, h4, h5, h6 {
+.homepage-panel h1, h2, h3, h4, h5, h6, .emph {
+  -webkit-transition: all 0.8s ease;
+  -moz-transition: all 0.8s ease;
+  -o-transition: all 0.8s ease;
+  -ms-transition: all 0.8s ease;
+  transition: all 0.8s ease;
   margin: 0;
 }
 
@@ -54,22 +59,18 @@ body {
   font-weight: 700;
   padding: 0.4em 0;
   letter-spacing: 0.2em;
-  -webkit-transition: all 0.7s ease;
-  -moz-transition: all 0.7s ease;
-  -o-transition: all 0.7s ease;
-  -ms-transition: all 0.7s ease;
-  transition: all 0.7s ease;
+  text-transform: uppercase;
 }
 
-.homepage-panel h1:hover {
-  color: #feedff;
-}
-
-.homepage-panel h4 {
+.homepage-panel p {
   color: #feedff;
   font-size: 1.25vw;
   font-weight: 300;
   padding: 0.8em 0;
+}
+
+.homepage-panel h1:hover, .emph:hover {
+  color: #f7bffa;
 }
 
 .homepage-panel .homepage-contact {
@@ -99,7 +100,7 @@ body {
   border-width: thin;
   padding: 0.5em;
   -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.s ease;
+  -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   -ms-transition: all 0.5s ease;
   transition: all 0.5s ease;
@@ -126,6 +127,7 @@ body {
   font-size: calc(1.15vw - 0.24px);
   letter-spacing: 0.22vw;
   vertical-align: bottom;
+  text-transform: uppercase;
 }
 
 .homepage-panel .homepage-contact::after {
@@ -144,7 +146,7 @@ body {
   .homepage-panel h1 {
     font-size: 2em;
   }
-  .homepage-panel h4 {
+  .homepage-panel p {
     font-size: 1em;
   }
   .homepage-panel .homepage-contact a {
